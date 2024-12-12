@@ -30,7 +30,7 @@ const Signup = () => {
   const handleSignup = async (values) => {
     setLoading(true);
     try {
-      const { data, status } = await apiRequest({
+      const {  status } = await apiRequest({
         endUrl: `${BASE_URL}/user/register`,
         method: "POST",
         body: values,
