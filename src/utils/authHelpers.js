@@ -4,40 +4,8 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 /* Alias auth variable */
-const localKey = '_local';
 const authCookie = 'user_jwt'
 
-// function encrypt(data) {
-//     try {
-//         return CryptoJS.AES.encrypt(data, config.CRYPTO_SECRET_KEY).toString();
-//     }
-//     catch { return null; }
-// }
-
-// function decrypt(data) {
-//     try {
-//         return CryptoJS.AES.decrypt(data, config.CRYPTO_SECRET_KEY).toString(CryptoJS.enc.Utf8);
-//     }
-//     catch { return null; }
-// }
-
-// const getData = () => {
-//     try {
-//         return JSON.parse(decrypt(localStorage.getItem(localKey)))
-//     }
-//     catch (err) {
-//         return err
-//     }
-// }
-
-// const saveData = (data) => {
-//     try {
-//         localStorage.setItem(localKey, encrypt(JSON.stringify(data)))
-//     }
-//     catch (err) {
-//         return err
-//     }
-// }
 
 const setAuthCookie = (jwt) => {
     if (config.ENV === "local") {
@@ -94,10 +62,6 @@ const logout = () => {
 
 export {
     logout,
-    // saveData,
-    // encrypt as encryptData,
-    // decrypt as decryptData,
-    // getData,
     setAuthCookie,
     getAuthCookie,
     removeAuthCookie
