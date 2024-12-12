@@ -16,7 +16,7 @@ const Header = ({ isAuthenticated }) => {
     const handleLogout = async () => {
         try {
             setLoading(true);
-            const { data, status } = await apiRequest({
+            const { status } = await apiRequest({
                 endUrl: `${BASE_URL}/user/logout`,
                 method: 'POST',
                 showMsg: true,
